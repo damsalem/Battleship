@@ -29,9 +29,9 @@ const model = {
       const index = ship.locations.indexOf(guess);
       if (index >= 0) {
         // We have a hit!
-        ship.hits[guess] = "hit";
+        ship.hits[index] = "hit";
         view.displayHit(guess);
-        view.displayMessage(guess);
+        view.displayMessage("Hit!");
         if (this.isSunk(ship)) {
           view.displayMessage("You sank my battleship!");
           this.shipsSunk++;
